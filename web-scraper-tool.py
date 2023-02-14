@@ -1,32 +1,40 @@
-#importing necessary libraries
+# importing necessary libraries
 import requests
 from bs4 import BeautifulSoup
 
-#defining the function to scrape the web page 
+# defining the function to scrape the web page 
 def scrape_web(url):
+    try:
+        # making a request to the url and getting the response 
+        response = requests.get(url)
 
-    #making a request to the url and getting the response 
-    response = requests.get(url)
+        # checking if the response was successful
+        if response.status_code == 200:
+            # parsing the response using BeautifulSoup 
+            soup = BeautifulSoup(response.text, 'html.parser')
 
-    #parsing the response using BeautifulSoup 
-    soup = BeautifulSoup(response.text, 'html.parser')
+            # finding all the elements with tag 'a' 
+            links = soup.find_all('a')
 
-    #finding all the elements with tag 'a' 
-    links = soup.find_all('a')
+            # creating an empty list to store all the scraped data 
+            data = []
 
-    #creating an empty list to store all the scraped data 
-    data = []
+            # looping through each link and extracting required information 
+            for link in links:
+                # extracting href attribute from each link 
+                href = link.get('href')
 
-    #looping through each link and extracting required information 
-    for link in links:
+                # extracting text from each link 
+                text = link.text
 
-        #extracting href attribute from each link 
-        href = link.get('href')
+                # appending extracted data into list 
+                data.append({'href': href, 'text': text})
 
-        #extracting text from each link 
-        text = link.text
-
-        #appending extracted data into list 
-        data.append({'href': href, 'text': text})
-
-    return data
+            return data
+        else:
+            # raise an error if the response status code is not 200
+            raise Exception(f"Response status code: {response.status_code}")
+    except Exception as e:
+        # print the error message
+        print(f"An error occurred: {e}")
+        return None
