@@ -1,15 +1,25 @@
-#Welcome to the web scraping extravaganza! With this code, you can easily scrape any web page for its contents. 
+# Web Scraper
+This is a Python script that scrapes a webpage and extracts all the links in it, saving the data to a JSON file. It uses the following libraries:
 
-To get started, simply follow these steps: 
+requests
+BeautifulSoup
+json
+tkinter
+Installation
+First, make sure that you have Python 3 and the necessary libraries installed. You can install them using pip:
 
-#1. Import the necessary libraries. This code uses requests and BeautifulSoup to make the scraping process easier. 
+## Copy code
+pip install requests beautifulsoup4
 
-#2. Define the function to scrape the web page. This code defines a function called scrape_web() which takes in a URL as an argument 
-and returns a list of all the links on that page along with their associated text. 
+## Usage
+To use this script, follow these steps:
 
-#3. Call the function with a URL as an argument. Simply call scrape_web() with a valid URL as an argument and it will return all the links on that page 
-along with their associated text in a list format. 
+Run the script in your Python environment.
+Enter the URL of the webpage you want to scrape in the URL entry widget.
+Click the "Browse" button and select the location and name of the file you want to save the data to.
+Click the "Start Scraping" button to begin the scraping process.
+As the script runs, it will update a progress bar to show the progress of the scraping process. Once the scraping is complete, the data will be saved to the file you selected and the console will display a message indicating the file name and location.
 
-#And that's it! You're now ready to start scraping any web page you want!
+### Note: this script is intended for educational purposes only and should not be used for unethical or illegal activities.
 
 ~Dre(Dius)
