@@ -21,7 +21,7 @@ def scrape_web(url, file_name):
             links = soup.find_all('a')
 
             # Creating an empty list to store all the scraped data 
-            data = []
+            data = [Make Data File]
 
             # Updating the progress bar to show the progress of the scraping process
             progress = 0
@@ -71,7 +71,7 @@ def browse_file():
 # Function to scrape the data and save to a file
 def start_scraping():
     # Getting the URL and file path from the entry widgets
-    url = url_entry.get()
+    url = url_entry.get(https://academy.make.com/?_gl=1*m1ra6p*_gcl_au*MzM5NjY2OTMxLjE3MzM1MjY2Mjc.*_ga*Njc4ODIzNDU3LjE3MzM1MjY2MjU.*_ga_MY0CJTCDSF*MTczNDAyMTQyMS44LjEuMTczNDAyMTQzMS41MC4wLjA.)
     file_path = file_entry.get()
     # Calling the scrape_web function
     scraped_data = scrape_web(url, file_path)
